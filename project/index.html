@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lost and Found</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <header>
+        <h1>Welcome to the Lost and Found Website</h1>
+        <nav>
+            <a href="#report">Report Lost/Found Item</a>
+            <a href="#search">Search Items</a>
+        </nav>
+    </header>
+
+    <section id="report">
+        <h2>Report a Lost or Found Item</h2>
+        <form action="php/submit_item.php" method="POST" enctype="multipart/form-data">
+            <label for="itemType">Item Type:</label>
+            <select id="itemType" name="item_type">
+                <option value="lost">Lost</option>
+                <option value="found">Found</option>
+            </select>
+
+            <label for="itemName">Item Name:</label>
+            <input type="text" id="itemName" name="item_name" required>
+
+            <label for="itemDesc">Item Description:</label>
+            <textarea id="itemDesc" name="item_description" required></textarea>
+
+            <label for="location">Location:</label>
+            <input type="text" id="location" name="location" required>
+
+            <label for="image">Item Image (optional):</label>
+            <input type="file" id="image" name="item_image">
+
+            <label for="contact">Your Contact Info:</label>
+            <input type="text" id="contact" name="contact_info" required>
+
+            <input type="submit" value="Submit">
+        </form>
+    </section>
+
+    <section id="search">
+        <h2>Search Lost/Found Items</h2>
+        <form>
+            <input type="text" id="searchQuery" placeholder="Search for lost or found items...">
+            <button type="button" onclick="searchItems()">Search</button>
+        </form>
+        <div id="searchResults"></div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Lost and Found Website</p>
+    </footer>
+
+    <script src="js/scripts.js"></script>
+</body>
+</html>
