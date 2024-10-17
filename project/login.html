@@ -4,105 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Login - Lost and Found</title>
-    <link rel="stylesheet" href="css/styles.css"> <!-- Link to external stylesheet if needed -->
-    <style>
-        /* Styling for the body and background */
-        body {
-            font-family: Arial, sans-serif;
-            background-color: navy; /* Navy blue background */
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh; /* Full height to center the form */
-        }
-
-        /* Container for the login form */
-        .login-container {
-            background-color: white; /* White background for the form */
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3); /* Soft shadow */
-            width: 100%;
-            max-width: 400px;
-            text-align: center;
-        }
-
-        /* Form heading */
-        h2 {
-            margin-bottom: 24px;
-            color: #333; /* Dark text color */
-        }
-
-        /* Styling the form */
-        form {
-            display: flex;
-            flex-direction: column;
-            align-items: stretch; /* Ensure full width of inputs */
-        }
-
-        label {
-            margin-bottom: 8px;
-            font-weight: bold;
-            color: #555;
-            text-align: left; /* Align labels to the left */
-        }
-
-        input[type="text"], input[type="password"] {
-            padding: 12px;
-            margin-bottom: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 16px;
-        }
-
-        input[type="submit"] {
-            padding: 12px;
-            background-color: #4CAF50; /* Green color for submit button */
-            color: white;
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        input[type="submit"]:hover {
-            background-color: #45a049; /* Darker green on hover */
-        }
-
-        /* Error message styling */
-        .error {
-            color: red;
-            margin-top: 10px;
-        }
-    </style>
+    <title>Login - Lost and Seek</title>
+    <link rel="stylesheet" href="css/style.css"> <!-- Link to external stylesheet if needed --> 
 </head>
 <body>
 
-    <div class="login-container">
+    <main id="container">
         <h2>Login</h2>
-        <form action="php/login.php" method="POST">
+        <form id="myform" action="php/login.php" method="POST">
             <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required>
-
+            <input type="text" id="username" name="username" required><br>
             <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
-
-            <input type="submit" value="Login">
-            <p>Don't have an account? <a href="signup.html" style="color: #4CAF50;">Sign up here</a></p>
-
+            <input type="password" id="password" name="password" required><br>
+            <div class="remember-me">
+            <input type="checkbox" id="remember" name="remember">
+            <label for="remember">Remember Me</label><br>
+            </div>
+            <input type="submit" id="submit" value="login">
+            <p>Don't have an account? <a href="signup.html">Sign up here</a></p>
         </form>
-        
-        <!-- Optional: Display an error message if login fails -->
-        <?php if (isset($_GET['error'])): ?>
-            <div class="error">Invalid username or password</div>
-        <?php endif; ?>
-    </div>
+    </main>
     <footer>
-        <p>&copy; 2024 Lost and Found Website</p>
+        <p>&copy; 2024 Lost and Seek</p>
     </footer>
 
 </body>

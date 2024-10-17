@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="dashboard.css">
+    <title>Lost and Found Dashboard</title>
+</head>
+<body>
+
+<header>
+    <h1>Lost and Found Dashboard</h1>
+    <nav>
+        <ul>
+            <li><a href="dashboard.html">Home</a></li>
+            <li><a href="submit.html">Submit a Report</a></li>
+            <li><a href="myreports.html">My Reports</a></li>
+            <li><a href="php/logout.php">Logout</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <section id="report-summary">
+        <h2>Submitted Reports</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Description</th>
+                    <th>Status</th>
+                    <th>Date Submitted</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Lost Wallet</td>
+                    <td>Active</td>
+                    <td>2024-10-17</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Found Keys</td>
+                    <td>Resolved</td>
+                    <td>2024-10-16</td>
+                </tr>
+                <!-- Add more rows as needed -->
+            </tbody>
+        </table>
+    </section>
+
+    <section id="report-form">
+        <h2>Add New Report</h2>
+        <form action="submit_item.php" method="POST">
+            <label for="item-description">Item Description:</label>
+            <input type="text" id="item-description" name="item_description" required>
+            <br>
+            <label for="location">Location Found/Lost:</label>
+            <input type="text" id="location" name="location" required>
+            <br>
+            <input type="submit" value="Submit Report">
+        </form>
+    </section>
+</main>
+
+<footer>
+    <p>© 2024 Lost and Seek | All Rights Reserved</p>
+</footer>
+
+</body>
+</html>

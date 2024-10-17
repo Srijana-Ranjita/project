@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lost and Seek</title>
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+    <main id="container">
+        <h2>Report a Lost or Found Item</h2>
+        <form action="php/submit_item.php" method="POST" id="myform" enctype="multipart/form-data">
+            <label for="itemType">Item Type:</label>
+            <select id="itemType" name="item_type">
+                <option value="lost">Lost</option>
+                <option value="found">Found</option>
+            </select>
+
+            <label for="itemName">Item Name:</label>
+            <input type="text" id="itemName" name="item_name" required>
+
+            <label for="itemDesc">Item Description:</label>
+            <textarea id="itemDesc" name="item_description" required></textarea>
+
+            <label for="location">Location:</label>
+            <input type="text" id="location" name="location" required>
+
+            <label for="image">Item Image (optional):</label>
+            <input type="file" id="image" name="item_image" accept=".jpg, .jpeg, .png, .gif">
+
+            <label for="contact">Your Contact Info:</label>
+            <input type="number" id="contact" name="contact_info" required>
+
+            <input type="submit" id="submit" value="Submit">
+        </form>
+    </main>
+    <script>
+        const isLoggedIn = false; 
+    
+        if (!isLoggedIn) {
+            document.getElementById('report-container').innerHTML = `
+                <p>You must be <a href="login.html">logged in</a> to submit a report.</p>
+            `;
+        }
+    </script>
+    <footer>
+        <p>&copy; 2024 Lost and Seek</p>
+    </footer>
+</body>
+</html>
